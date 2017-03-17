@@ -27,8 +27,10 @@ namespace TechJobs.Controllers
             // Fetch results
             if (searchType.Equals("all"))
             {
-                searchResults = JobData.FindByValue(searchTerm);
+                searchResults = JobData.FindAll();
                 ViewBag.jobs = searchResults;
+                ViewBag.columns = ListController.columnChoices;
+                ViewBag.title = "Search";
                 return View("Index");
 
             }
